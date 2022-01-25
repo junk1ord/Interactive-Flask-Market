@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}
+    Register Page
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <form method="POST" class="form-register" style="color: white">
+            
+            {{ form.hidden_tag() }}
+            
+            <h1 class="h3 mt-3 pt-3 font-weight-normal">
+                Please Create your Account
+            </h1>
+            <br>
+            <div class="form-group row py-3">
+                <div class="col-3">
+                    {{ form.username.label(class="d-flex justify-content-end align-items-center") }}
+                </div>
+                <div class="col-9">
+                    {{ form.username(class="form-control", placeholder="Enter your user name") }}
+                </div>
+            </div>
+
+            <div class="form-group row py-3">
+                <div class="col-3">
+                    {{ form.email_address.label(class="d-flex justify-content-end align-items-center") }}
+                </div>
+                <div class="col-9">
+                    {{ form.email_address(class="form-control", placeholder="Enter your email address") }}
+                </div>
+                
+            </div>
+        
+            <div class="form-group row py-3">
+                <div class="col-3">
+                    {{ form.password1.label(class="d-flex justify-content-end align-items-center") }}
+                </div>
+                <div class="col-9">
+                    {{ form.password1(class="form-control", placeholder="Enter your password") }}
+                </div>
+            </div>
+        
+            <div class="form-group row py-3">
+                <div class="col-3">
+                    {{ form.password2.label(class="d-flex justify-content-end align-items-center") }}
+                </div>
+                <div class="col-9">
+                    {{ form.password2(class="form-control", placeholder="Confirm your password") }} 
+                </div>
+            </div>
+
+            {{ form.submit(class="btn btn-lg btn-block btn-outline-primary w-25 mx-auto") }}
+
+            <div class="checkbox mt-4 mx-auto text-center" style="width: fit-content;">
+                <h6>Already have an account?</h6>
+                <a
+                class="mt-2 btn btn-sm btn-outline-info"
+                href="{{ url_for('login_page') }}"
+                >Sign In</a
+                >
+            </div>
+        </form>
+    </div>
+{% endblock %}
